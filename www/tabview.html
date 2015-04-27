@@ -1,0 +1,24 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="center">Qiita</div>
+        <div class="left">
+            <ons-toolbar-button ng-click="leftmenu.toggleMenu()">
+                <ons-icon icon="fa fa-inbox" size="32px" fixed-width="true" style="vertical-align: -7px">
+                </ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="right">
+            <ons-toolbar-button ng-click="rightmenu.toggleMenu()">
+                <ons-icon icon="ion-navicon" size="32px" fixed-width="true" style="vertical-align: -7px">
+                </ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-tabbar position="top" var="tabbar">
+        <ons-tabbar-item page="home.html" label="Swift" icon="ion-hammer" active="true"></ons-tabbar-item>
+        <ons-tabbar-item page="feed.html" label="Scala" icon="fa-linkedin-square"></ons-tabbar-item>
+        <ons-tabbar-item page="tags.html" label="iOS" icon="ion-social-apple"></ons-tabbar-item>
+        <ons-tabbar-item page="settings.html" label="Android" icon="ion-social-android"></ons-tabbar-item>
+    </ons-tabbar>
+</ons-page>

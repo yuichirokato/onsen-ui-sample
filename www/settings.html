@@ -1,0 +1,31 @@
+<ons-page ng-controller="AndroidPostsController">
+    <ons-pull-hook ng-action="load($done)" var="loader" threshold-height="300px">
+       <span ng-switch="loader.getCurrentState()">
+          <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon>Pull down to refresh</span>
+          <span ng-switch-when="preaction"><ons-icon size="35px"
+                                                     icon="ion-arrow-up-a"></ons-icon> Release to refresh</span>
+          <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Loading data...</span>
+        </span>
+    </ons-pull-hook>
+
+    <ons-gesture-detector ng-swipeleft="swipeleftEvent()" ng-swiperight="swiperightEvent()">
+        <div>
+            <ons-list>
+                <ons-list-item modifier="chevron" class="item" ng-repeat="rssitem in rssList" ng-click="showArticle($index)">
+                    <ons-row>
+                        <ons-col width="60px" height="60px" style="margin-top: 20px">
+                            <div class="item-thum">
+                                <img ng-src="{{rssitem.user.profile_image_url}}" style="width: 100%; height: 100%">
+                            </div>
+                        </ons-col>
+                        <ons-col>
+                            <p class="item-desc" style="margin-left: 10px; width: 250px; margin-top: 15px; line-height: 30px">
+                                {{rssitem.title}}
+                            </p>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+            </ons-list>
+        </div>
+    </ons-gesture-detector>
+</ons-page>
